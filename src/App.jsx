@@ -75,20 +75,21 @@ class App extends Component {
           <div className="todo">
             <ToDoForm addTask={this.addTask} />
             {tasks.length
-              ? <ToDoList tasks={tasks} onToggle={this.onToggle} onRemove={this.onRemove} />
+              ? (
+                <>
+                  <ToDoList tasks={tasks} onToggle={this.onToggle} onRemove={this.onRemove} />
+                  <div className="todo__buttons">
+                    <button onClick={this.clearDone} className="todo__button" type="button">Clear Done</button>
+                    <button onClick={this.clearAll} className="todo__button" type="button">Clear All</button>
+                  </div>
+                </>
+              )
               : (
                 <div className="todo__empty">
                   <h2>ToDo list is empty</h2>
                   <p>Add items in the form above</p>
                 </div>
               )}
-            {tasks.length
-              ? (
-                <div className="todo__buttons">
-                  <button onClick={this.clearDone} className="todo__button" type="button">Clear Done</button>
-                  <button onClick={this.clearAll} className="todo__button" type="button">Clear All</button>
-                </div>
-              ) : ''}
           </div>
         </main>
       </>

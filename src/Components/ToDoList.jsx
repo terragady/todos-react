@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ToDoCard from './ToDoCard';
 
 const ToDoList = ({ tasks, onToggle, onRemove }) => {
@@ -10,7 +11,6 @@ const ToDoList = ({ tasks, onToggle, onRemove }) => {
       done={todo.done}
       onToggle={() => onToggle(todo.id)}
       onRemove={onRemove}
-
     />
   ));
 
@@ -19,6 +19,12 @@ const ToDoList = ({ tasks, onToggle, onRemove }) => {
       {todos}
     </ul>
   );
+};
+
+ToDoList.propTypes = {
+  tasks: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onToggle: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired,
 };
 
 export default ToDoList;

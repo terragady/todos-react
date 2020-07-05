@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class ToDoForm extends React.Component {
   constructor(props) {
@@ -35,5 +36,9 @@ class ToDoForm extends React.Component {
     );
   }
 }
+
+ToDoForm.propTypes = {
+  addTask: PropTypes.func.isRequired,
+};
 
 export default ToDoForm;
