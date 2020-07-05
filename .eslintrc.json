@@ -1,6 +1,23 @@
 {
-  "extends": [
-    "salt",
-    "salt/react"
-  ]
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    
+      "extends": [
+        "salt",
+        "salt/react"
+      ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+    }
 }
