@@ -23,7 +23,6 @@ class ToDoForm extends React.Component {
     return (
       <form className="todo__form" onSubmit={this.handleSubmit}>
         <input
-          // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus
           type="text"
           className="todo__input"
